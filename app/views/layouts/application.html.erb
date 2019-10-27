@@ -7,6 +7,11 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% if usuario_signed_in? %>
+      <p> <%= link_to "Logout", destroy_usuario_session_path, method: :delete %> </p>
+    <% end %>
+
   </head>
 
   <body>
