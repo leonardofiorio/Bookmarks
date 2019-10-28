@@ -31,9 +31,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Gem para autenticação de usuários
 gem 'devise'
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  gem 'foreman'
 end
 
 group :development do

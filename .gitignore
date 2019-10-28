@@ -2,3 +2,5 @@ log/*.log
 tmp/**/
 tmp/*
 vendor/cache/*
+.env
+Procfile

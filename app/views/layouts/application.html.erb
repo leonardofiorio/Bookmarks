@@ -9,7 +9,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <% if usuario_signed_in? %>
-      <p> <%= link_to "Logout", destroy_usuario_session_path, method: :delete %> </p>
+      <p>
+        Você está logado com a conta: <%= current_usuario.email %> 
+        <%= link_to "Logout", destroy_usuario_session_path, method: :delete %> 
+        
+      </p>
     <% end %>
 
   </head>
