@@ -11,6 +11,9 @@
     </div>
   <% end %>
 
+  
+  <%= form.hidden_field :usuario_id, value: current_usuario.id %>
+
   <div class="field">
     <%= form.label :url %>
     <%= form.text_field :url %>

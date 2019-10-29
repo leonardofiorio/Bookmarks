@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_130614) do
+ActiveRecord::Schema.define(version: 2019_10_29_210249) do
 
   create_table "favoritos", force: :cascade do |t|
     t.string "url"
     t.text "comentario"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "usuario_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -31,4 +32,5 @@ ActiveRecord::Schema.define(version: 2019_10_27_130614) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favoritos", "usuarios", on_delete: :cascade
 end

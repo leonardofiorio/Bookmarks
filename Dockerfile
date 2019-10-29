@@ -60,6 +60,7 @@ EXPOSE 3000
 # Antes do build, o conteudo de domain, port, username e password deve ser trocado pelas
 # informações de autenticação do servidor SMTP
 
+ENV MAIL_ADRESS conteudo
 ENV MAIL_DOMAIN conteudo
 ENV MAIL_PORT conteudo
 ENV MAIL_USERNAME conteudo

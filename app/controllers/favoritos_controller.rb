@@ -5,7 +5,7 @@ class FavoritosController < ApplicationController
   # GET /favoritos
   # GET /favoritos.json
   def index
-    @favoritos = Favorito.all
+    @favoritos = Favorito.where("usuario_id": current_usuario.id)
   end
 
   # GET /favoritos/1
@@ -25,7 +25,11 @@ class FavoritosController < ApplicationController
   # POST /favoritos
   # POST /favoritos.json
   def create
-    @favorito = Favorito.new(favorito_params)
+    @favorito = Favorito.new
+
+    @favorito.url = favorito_params['url'] 
+    @favorito.comentario = favorito_params['comentario']
+    @favorito.usuario = current_usuario.id
 
     respond_to do |format|
       if @favorito.save
