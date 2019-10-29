@@ -36,7 +36,6 @@ RUN apt-get install -y git-core zlib1g-dev build-essential libssl-dev libreadlin
 
 ##########################################################################################
 
-
 RUN gem install bundler
 
 
@@ -52,6 +51,22 @@ RUN bundle install
 
 # Configuração de porta do docker
 EXPOSE 3000
+
+
+##########################################################################################
+# Entrada dos dados de autenticação de um servidor smtp para email de recuperação de
+# senha do usuário
+
+# Antes do build, o conteudo de domain, port, username e password deve ser trocado pelas
+# informações de autenticação do servidor SMTP
+
+ENV MAIL_DOMAIN conteudo
+ENV MAIL_PORT conteudo
+ENV MAIL_USERNAME conteudo
+ENV MAIL_PASSWORD conteudo
+
+
+##########################################################################################
  
 
 # Executar testes
