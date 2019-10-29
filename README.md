@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bookmarks é um projeto desenvolvido em Ruby on Rails para inserção, alteração, visualização e remoção em um cadastro de Bookmarks 
 
-Things you may want to cover:
 
-* Ruby version
+Principais Tecnologias:
 
-* System dependencies
+* Ruby 2.6.5
 
-* Configuration
+* Rails 6.0.0
 
-* Database creation
+* sqlite 3
 
-* Database initialization
+* Docker
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Como executar:
+* Alterar as linhas da declaração de variáveis globais de domain, port, username e password do servidor SMTP no Dockerfile
+	EX:
+		ENV MAIL_DOMAIN mail.com
+		ENV MAIL_PORT 25
+		ENV MAIL_USERNAME email@email.com
+		ENV MAIL_PASSWORD passwordemail 
 
-* Deployment instructions
+* $ docker build -t bookmarks .
 
-* ...
+* $ docker run -it -p 3000:3000 bookmarks
+
+
