@@ -3,7 +3,7 @@
 Bookmarks é um projeto desenvolvido em Ruby on Rails para inserção, alteração, visualização e remoção em um cadastro de Bookmarks 
 
 
-Principais Tecnologias:
+## Principais Tecnologias:
 
 * Ruby 2.6.5
 
@@ -14,13 +14,18 @@ Principais Tecnologias:
 * Docker
 
 
-Como executar:
+## Como executar:
 * Alterar as linhas da declaração de variáveis globais de domain, port, username e password do servidor SMTP no Dockerfile
-	<p>EX:</p>
-		<p>ENV MAIL_DOMAIN mail.com</p>
-		<p>ENV MAIL_PORT 25</p>
-		<p>ENV MAIL_USERNAME email@email.com</p>
-		<p>ENV MAIL_PASSWORD passwordemail </p>
+
+	EX:
+
+		ENV MAIL_DOMAIN mail.com
+
+		ENV MAIL_PORT 25
+
+		ENV MAIL_USERNAME email@email.com
+		
+		ENV MAIL_PASSWORD passwordemail
 
 * $ docker build -t bookmarks .
 
