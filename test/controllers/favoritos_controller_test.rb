@@ -2,6 +2,10 @@ require 'test_helper'
 
 class FavoritosControllerTest < ActionDispatch::IntegrationTest
   setup do
+    get new_usuario_session_path
+    sign_in usuarios(:one)
+    post usuario_session_url
+
     @favorito = favoritos(:one)
   end
 

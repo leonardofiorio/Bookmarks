@@ -3,7 +3,4 @@
 one:
   url: MyString
   comentario: MyText
-
-two:
-  url: MyString
-  comentario: MyText
+  usuario_id: 1

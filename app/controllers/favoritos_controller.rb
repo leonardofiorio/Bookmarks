@@ -27,9 +27,11 @@ class FavoritosController < ApplicationController
   def create
     @favorito = Favorito.new
 
+
     @favorito.url = favorito_params['url'] 
     @favorito.comentario = favorito_params['comentario']
-    @favorito.usuario = current_usuario.id
+    @favorito.usuario = current_usuario
+
 
     respond_to do |format|
       if @favorito.save
