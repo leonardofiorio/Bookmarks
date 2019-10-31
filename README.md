@@ -9,7 +9,7 @@ Bookmarks é um projeto desenvolvido em Ruby on Rails para inserção, alteraç�
 
 * Rails 6.0.0
 
-* sqlite 3
+* Postgres
 
 * Docker
 
@@ -27,8 +27,14 @@ Bookmarks é um projeto desenvolvido em Ruby on Rails para inserção, alteraç�
 		
 		ENV MAIL_PASSWORD passwordemail
 
-* $ docker build -t bookmarks .
+* $ docker-compose build
 
-* $ docker run -it -p 3000:3000 bookmarks
+* $ docker-compose up
 
+* $ docker-compose run web rake db:create
 
+* $ docker-compose run web rake db:migrate
+
+* $ docker-compose up
+
+* Acessar a aplicação em localhost:3000 em um navegador

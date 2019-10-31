@@ -57,10 +57,10 @@ EXPOSE 3000
 # Entrada dos dados de autenticação de um servidor smtp para email de recuperação de
 # senha do usuário
 
-# Antes do build, o conteudo de domain, port, username e password deve ser trocado pelas
+# Antes do build, o conteudo de address, domain, port, username e password devem ser trocado pelas
 # informações de autenticação do servidor SMTP
 
-ENV MAIL_ADRESS conteudo
+ENV MAIL_ADDRESS conteudo
 ENV MAIL_DOMAIN conteudo
 ENV MAIL_PORT conteudo
 ENV MAIL_USERNAME conteudo
@@ -68,11 +68,40 @@ ENV MAIL_PASSWORD conteudo
 
 
 ##########################################################################################
+
+
+##########################################################################################
+# Instalação e configuraçao do Postgres no Ubuntu
+
+#RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys #B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
+
+#RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+
+#RUN apt-get update && apt-get install -y postgresql postgresql-contrib
+
+#USER postgres
+
+#RUN    /etc/init.d/postgresql start &&\
+#    psql --command "CREATE USER leonardo WITH SUPERUSER PASSWORD '123456';"
+
+
+
+##########################################################################################
  
+USER root
+
+
+# Add a script to be executed every time the container starts.
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
+
+RUN apt-get install -y postgresql-client
+
 
 # Executar testes
 # CMD rails test
-
 
 # Executando server 
 CMD rails s -b 0.0.0.0 -p 3000
